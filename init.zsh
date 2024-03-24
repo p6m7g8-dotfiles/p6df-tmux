@@ -1,4 +1,4 @@
-# tmuxcheck tmux=bash
+# shellcheck shell=bash
 ######################################################################
 #<
 #
@@ -22,8 +22,8 @@ p6df::modules::tmux::deps() {
 ######################################################################
 p6df::modules::tmux::external::brew() {
 
-  brew install screen
-  brew install tmux
+  p6df::modules::homebrew::cli::brew::install screen
+  p6df::modules::homebrew::cli::brew::install tmux
 
   p6_return_void
 }
@@ -31,81 +31,19 @@ p6df::modules::tmux::external::brew() {
 ######################################################################
 #<
 #
-# Function: code rc = p6_tmux_cmd(cmd, ...)
+# Function: p6df::modules::tmux::init(_module, dir)
 #
 #  Args:
-#	cmd -
-#	... - 
-#
-#  Returns:
-#	code - rc
+#	_module -
+#	dir -
 #
 #>
 ######################################################################
-p6_tmux_cmd() {
-  local cmd="$1"
-  shift 1
+p6df::modules::tmux::init() {
+  local _module="$1"
+  local dir="$2"
 
-  local log_type
-  case $cmd in
-  *) log_type=p6_run_write_cmd ;;
-  esac
+  p6_bootstrap "$dir"
 
-  p6_run_code "$log_type tmux $cmd $*"
-  local rc=$?
-
-  p6_return_code_as_code "$rc"
-}
-
-######################################################################
-#<
-#
-# Function: p6df::modules::tmux::new(session, cmd)
-#
-#  Args:
-#	session -
-#	cmd -
-#
-#>
-######################################################################
-p6df::modules::tmux::new() {
-  local session="$1"
-  local cmd="$2"
-
-  p6_tmux_cmd "new -s \"$session\" $cmd"
-}
-
-######################################################################
-#<
-#
-# Function: p6df::modules::tmux::attach(session)
-#
-#  Args:
-#	session -
-#
-#>
-######################################################################
-p6df::modules::tmux::attach() {
-  local session="$1"
-
-  p6_tmux_cmd "attach -d -t \"$session\""
-}
-
-######################################################################
-#<
-#
-# Function: p6df::modules::tmux::make(session, cmd)
-#
-#  Args:
-#	session -
-#	cmd -
-#
-#>
-######################################################################
-p6df::modules::tmux::make() {
-  local session="$1"
-  local cmd="$2"
-
-  p6df::modules::tmux::attach "$session" ||
-    p6df::modules::tmux::new "$session" "$cmd"
+  p6_return_void
 }
