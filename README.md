@@ -10,8 +10,7 @@
   - [Summary](#summary)
   - [Contributing](#contributing)
   - [Code of Conduct](#code-of-conduct)
-  - [Changes](#changes)
-    - [Usage](#usage)
+  - [Usage](#usage)
   - [Author](#author)
 
 ### Badges
@@ -34,25 +33,45 @@
 
 - [Code of Conduct](https://github.com/p6m7g8/.github/blob/master/CODE_OF_CONDUCT.md)
 
-## Changes
-
-- [Change Log](CHANGELOG.md)
-
 ## Usage
+
+
+### Aliases
+
+
+### Functions
 
 ### p6df-tmux:
 
 #### p6df-tmux/init.zsh:
 
-- code rc = p6_tmux_cmd(cmd, ...)
-- p6df::modules::tmux::attach(session)
 - p6df::modules::tmux::deps()
 - p6df::modules::tmux::external::brew()
-- p6df::modules::tmux::make(session, cmd)
-- p6df::modules::tmux::new(session, cmd)
+- p6df::modules::tmux::init(_module, dir)
+
+
+### p6df-tmux/lib:
+
+#### p6df-tmux/lib/cmd.sh:
+
+- p6df::modules::tmux::cmd(...)
+
+#### p6df-tmux/lib/session.sh:
+
+- p6df::modules::tmux::session::attach(session)
+- p6df::modules::tmux::session::make(session, cmd)
+- p6df::modules::tmux::session::new(session, cmd)
 
 
 
+## Hier
+```text
+.
+├── cmd.sh
+└── session.sh
+
+1 directory, 2 files
+```
 ## Author
 
 Philip M . Gollucci <pgollucci@p6m7g8.com>
