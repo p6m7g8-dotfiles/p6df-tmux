@@ -22,8 +22,8 @@ p6df::modules::tmux::deps() {
 ######################################################################
 p6df::modules::tmux::external::brew() {
 
-  p6df::modules::homebrew::cli::brew::install screen
-  p6df::modules::homebrew::cli::brew::install tmux
+  p6df::core::homebrew::cli::brew::install screen
+  p6df::core::homebrew::cli::brew::install tmux
 
   p6_return_void
 }
