@@ -47,3 +47,17 @@ p6df::modules::tmux::init() {
 
   p6_return_void
 }
+
+######################################################################
+#<
+#
+# Function: p6df::modules::tmux::mcp()
+#
+#>
+######################################################################
+p6df::modules::tmux::mcp() {
+
+  p6_js_npm_global_install "tmux-mcp"
+
+  p6_return_void
+}

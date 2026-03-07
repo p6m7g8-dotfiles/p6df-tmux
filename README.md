@@ -17,7 +17,9 @@
 
 ## Summary
 
-TODO: Add a short summary of this module.
+p6df module for tmux: terminal multiplexer (`tmux`, `screen` via brew),
+tmux-config plugin, and MCP server (`tmux-mcp` via npm) for
+AI-driven session and pane management.
 
 ## Contributing
 
@@ -39,8 +41,9 @@ TODO: Add a short summary of this module.
 - `p6df::modules::tmux::external::brew()`
 - `p6df::modules::tmux::init(_module, dir)`
   - Args:
-    - _module - 
-    - dir - 
+    - _module
+    - dir
+- `p6df::modules::tmux::mcp()`
 
 #### p6df-tmux/lib
 
@@ -48,21 +51,21 @@ TODO: Add a short summary of this module.
 
 - `p6df::modules::tmux::cmd(...)`
   - Args:
-    - ... - 
+    - ...
 
 ##### p6df-tmux/lib/session.sh
 
 - `p6df::modules::tmux::session::attach(session)`
   - Args:
-    - session - 
+    - session
 - `p6df::modules::tmux::session::make(session, cmd)`
   - Args:
-    - session - 
-    - cmd - 
+    - session
+    - cmd
 - `p6df::modules::tmux::session::new(session, cmd)`
   - Args:
-    - session - 
-    - cmd - 
+    - session
+    - cmd
 
 ## Hierarchy
 
