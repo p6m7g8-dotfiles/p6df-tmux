@@ -10,6 +10,7 @@ p6df::modules::tmux::deps() {
   ModuleDeps=(
     p6m7g8-dotfiles/p6common
     samoshkin/tmux-config
+    obra/superpowers-lab
   )
 }
 
