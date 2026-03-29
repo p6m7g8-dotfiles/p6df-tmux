@@ -17,11 +17,11 @@ p6df::modules::tmux::deps() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::tmux::external::brew()
+# Function: p6df::modules::tmux::external::brews()
 #
 #>
 ######################################################################
-p6df::modules::tmux::external::brew() {
+p6df::modules::tmux::external::brews() {
 
   p6df::core::homebrew::cli::brew::install screen
   p6df::core::homebrew::cli::brew::install tmux
