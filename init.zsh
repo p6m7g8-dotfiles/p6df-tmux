@@ -74,6 +74,6 @@ p6df::modules::tmux::mcp() {
 ######################################################################
 p6df::modules::tmux::prompt::system() {
 
-  p6_return_words 'tmux' "$TMUX"
+  p6_return_words 'tmux' '$TMUX'
 }
 
