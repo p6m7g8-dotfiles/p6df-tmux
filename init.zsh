@@ -47,26 +47,6 @@ p6df::modules::tmux::home::symlinks() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::tmux::init(_module, dir)
-#
-#  Args:
-#	_module -
-#	dir -
-#
-#>
-######################################################################
-p6df::modules::tmux::init() {
-  local _module="$1"
-  local dir="$2"
-
-  p6_bootstrap "$dir"
-
-  p6_return_void
-}
-
-######################################################################
-#<
-#
 # Function: p6df::modules::tmux::mcp()
 #
 #>
@@ -80,3 +60,20 @@ p6df::modules::tmux::mcp() {
 
   p6_return_void
 }
+
+######################################################################
+#<
+#
+# Function: words tmux $TMUX = p6df::modules::tmux::prompt::system()
+#
+#  Returns:
+#	words - tmux $TMUX
+#
+#  Environment:	 TMUX
+#>
+######################################################################
+p6df::modules::tmux::prompt::system() {
+
+  p6_return_words 'tmux' '$TMUX'
+}
+
