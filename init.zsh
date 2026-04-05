@@ -64,10 +64,10 @@ p6df::modules::tmux::mcp() {
 ######################################################################
 #<
 #
-# Function: words tmux $TMUX = p6df::modules::tmux::prompt::system()
+# Function: words tmux = p6df::modules::tmux::prompt::system()
 #
 #  Returns:
-#	words - tmux $TMUX
+#	words - tmux
 #
 #  Environment:	 TMUX
 #>
