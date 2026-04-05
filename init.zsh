@@ -17,21 +17,6 @@ p6df::modules::tmux::deps() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::tmux::external::brews()
-#
-#>
-######################################################################
-p6df::modules::tmux::external::brews() {
-
-  p6df::core::homebrew::cli::brew::install screen
-  p6df::core::homebrew::cli::brew::install tmux
-
-  p6_return_void
-}
-
-######################################################################
-#<
-#
 # Function: p6df::modules::tmux::home::symlinks()
 #
 #  Environment:	 HOME P6_DFZ_SRC_P6M7G8_DOTFILES_DIR
@@ -40,6 +25,21 @@ p6df::modules::tmux::external::brews() {
 p6df::modules::tmux::home::symlinks() {
 
   p6_file_symlink "$P6_DFZ_SRC_P6M7G8_DOTFILES_DIR/p6df-tmux/share/.tmux.conf" "$HOME/.tmux.conf"
+
+  p6_return_void
+}
+
+######################################################################
+#<
+#
+# Function: p6df::modules::tmux::external::brews()
+#
+#>
+######################################################################
+p6df::modules::tmux::external::brews() {
+
+  p6df::core::homebrew::cli::brew::install screen
+  p6df::core::homebrew::cli::brew::install tmux
 
   p6_return_void
 }
